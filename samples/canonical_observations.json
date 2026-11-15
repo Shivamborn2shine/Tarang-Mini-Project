@@ -1,0 +1,93 @@
+[
+  {
+    "schema_version": 1,
+    "id": "2ae66eca-c407-4efb-bc2b-a41e5414a4c7",
+    "session_id": "d31b5be0-c51b-4b39-bb95-18edc8d85df4",
+    "device_id": "ce992126-7c0e-4a63-8c33-0ba46a3cd950",
+    "kind": "wifi",
+    "technology": "wifi_5ghz",
+    "source": "android_wifi",
+    "observed_at": "2026-11-16T09:30:10Z",
+    "recorded_at": "2026-11-16T09:30:11Z",
+    "freshness_ms": 1000,
+    "location": {
+      "kind": "indoor",
+      "floorplan_id": "8a2f7f51-6e8b-4a86-8f91-5a6e004f8b9d",
+      "x_norm": 0.42,
+      "y_norm": 0.61
+    },
+    "metrics": {
+      "rssi_dbm": -67,
+      "frequency_mhz": 5180,
+      "quality_percent": null,
+      "channel_width_mhz": 80
+    },
+    "network": {
+      "ssid": "SurveyWiFi",
+      "bssid_hash": "9c3f1a8d2e7b4c01",
+      "is_connected": true
+    },
+    "flags": []
+  },
+  {
+    "schema_version": 1,
+    "id": "b29a5743-091f-4483-b0e5-002d59cf411e",
+    "session_id": "d31b5be0-c51b-4b39-bb95-18edc8d85df4",
+    "device_id": "ce992126-7c0e-4a63-8c33-0ba46a3cd950",
+    "kind": "cellular",
+    "technology": "lte",
+    "source": "android_telephony",
+    "observed_at": "2026-11-16T09:30:12Z",
+    "recorded_at": "2026-11-16T09:30:12Z",
+    "freshness_ms": 0,
+    "location": {
+      "kind": "outdoor",
+      "lat": 28.6139,
+      "lon": 77.209,
+      "gps_accuracy_m": 6.5
+    },
+    "metrics": {
+      "rsrp_dbm": -98,
+      "rsrq_db": -11,
+      "sinr_db": null,
+      "pci": 214,
+      "tac": 1042,
+      "is_registered": true
+    },
+    "network": {
+      "operator_name": "Jio",
+      "mcc_mnc": "405-872",
+      "subscription_slot": "SIM1"
+    },
+    "flags": ["unavailable"]
+  },
+  {
+    "schema_version": 1,
+    "id": "5f62e840-7d72-4a2b-82c1-764681cb893f",
+    "session_id": "d31b5be0-c51b-4b39-bb95-18edc8d85df4",
+    "device_id": "71f1a0e8-2b6b-4d40-a205-2df4d47c18a1",
+    "kind": "wifi",
+    "technology": "wifi_5ghz",
+    "source": "windows_netsh",
+    "observed_at": "2026-11-16T09:30:15Z",
+    "recorded_at": "2026-11-16T09:30:15Z",
+    "freshness_ms": 0,
+    "location": {
+      "kind": "unknown"
+    },
+    "metrics": {
+      "rssi_dbm": null,
+      "quality_percent": 60,
+      "frequency_mhz": null,
+      "channel": 161,
+      "rx_link_mbps": 263.3,
+      "tx_link_mbps": 260.0
+    },
+    "network": {
+      "ssid": "<REDACTED>",
+      "bssid_hash": "4a18d70e9231cc40",
+      "is_connected": true
+    },
+    "flags": ["rssi_unavailable", "sanitized"]
+  }
+]

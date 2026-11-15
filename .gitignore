@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+
+# Node / Web
+node_modules/
+dist/
+
+# Android / Gradle
+apps/android/.gradle/
+apps/android/build/
+apps/android/app/build/
+apps/android/local.properties
+*.apk
+*.aab
+*.iml
+.idea/
+
+# Local env & databases
+.env
+*.db
+*.sqlite3
+.knox/
