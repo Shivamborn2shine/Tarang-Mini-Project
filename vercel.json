@@ -1,9 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "builds": [
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
-    }
-  ]
+  "framework": null,
+  "buildCommand": "mkdir -p .vercel_out && cp index.html .vercel_out/index.html",
+  "outputDirectory": ".vercel_out"
 }
