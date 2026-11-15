@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TARANG — Wireless Network Surveying & Optimization</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #e2e8f0;
+      --teal: #0d9488;
+      --blue: #2563eb;
+      --amber: #d97706;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      background: #ccfbf1;
+      color: #115e59;
+      margin-bottom: 12px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 2.25rem;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin: 0 0 28px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+    .card p, .card li {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin: 0;
+    }
+    ul {
+      padding-left: 18px;
+      margin: 8px 0 0;
+    }
+    .status-ok { color: var(--teal); font-weight: 600; }
+    .status-pending { color: var(--amber); font-weight: 600; }
+    footer {
+      margin-top: 32px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <span class="badge">Sprint 0 · Discovery &amp; Instrumentation</span>
+    <h1>TARANG</h1>
+    <p class="subtitle">
+      <strong>T</strong>elecommunication <strong>A</strong>nalysis,
+      <strong>R</strong>adio-frequency <strong>A</strong>ssessment,
+      <strong>N</strong>etwork <strong>G</strong>eomapping —
+      a local-first Wi-Fi and cellular signal surveying platform.
+    </p>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Canonical Schema v1</h2>
+        <p class="status-ok">Verified (3/3 fixtures)</p>
+        <ul>
+          <li>Separated <code>observed_at</code>, <code>recorded_at</code>, <code>freshness_ms</code></li>
+          <li>Distinct indoor, outdoor &amp; unknown coordinates</li>
+          <li>Strict null/sentinel flags (never fabricated)</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Windows WLAN Probe</h2>
+        <p class="status-ok">Verified Live (4/4 unit tests)</p>
+        <ul>
+          <li><code>netsh wlan</code> interface &amp; BSSID parser</li>
+          <li>Preserves <code>quality_percent</code> (%) separate from <code>rssi_dbm</code></li>
+          <li>Project-salted BSSID hashing</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Android Radio Probe</h2>
+        <p class="status-pending">Awaiting Physical Device Run</p>
+        <ul>
+          <li>Kotlin + Jetpack Compose probe screen</li>
+          <li><code>WifiManager</code> &amp; <code>TelephonyManager</code> (LTE / 5G NR)</li>
+          <li><code>CellInfo.UNAVAILABLE</code> sentinel normalizer</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="card">
+      <h2>Roadmap</h2>
+      <ul>
+        <li><strong>Sprint 1:</strong> FastAPI + PostgreSQL/PostGIS backend &amp; idempotent batch ingest</li>
+        <li><strong>Sprint 2:</strong> Android Foreground Service collector &amp; Room offline queue</li>
+        <li><strong>Sprint 3:</strong> React + TypeScript + MapLibre web dashboard (replaces this status page)</li>
+        <li><strong>Sprint 4:</strong> Windows background collector, session compare &amp; optimization rules</li>
+      </ul>
+    </section>
+
+    <footer>
+      Repository:
+      <a href="https://github.com/Shivamborn2shine/Tarang-Mini-Project" target="_blank" rel="noreferrer">
+        github.com/Shivamborn2shine/Tarang-Mini-Project
+      </a>
+    </footer>
+  </main>
+</body>
+</html>
