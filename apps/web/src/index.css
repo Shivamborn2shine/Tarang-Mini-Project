@@ -1,0 +1,34 @@
+:root {
+  color-scheme: light;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --border: #e2e8f0;
+  --primary: #0f766e;
+  --primary-fg: #ffffff;
+  --good: #0d9488;
+  --fair: #d97706;
+  --weak: #dc2626;
+  --excellent: #2563eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+}
+
+input, select {
+  font: inherit;
+}

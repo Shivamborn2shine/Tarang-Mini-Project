@@ -86,6 +86,19 @@ def list_projects(db: Session = Depends(get_db)) -> list[Project]:
     return list(db.scalars(select(Project).order_by(Project.created_at.desc())))
 
 
+@app.get("/api/v1/projects/{project_id}/sessions", response_model=list[SessionOut])
+def list_project_sessions(project_id: str, db: Session = Depends(get_db)) -> list[SurveySession]:
+    if db.get(Project, project_id) is None:
+        raise HTTPException(status_code=404, detail="Project not found")
+    return list(
+        db.scalars(
+            select(SurveySession)
+            .where(SurveySession.project_id == project_id)
+            .order_by(SurveySession.started_at.desc())
+        )
+    )
+
+
 @app.post("/api/v1/projects/{project_id}/floorplans", response_model=FloorplanOut, status_code=201)
 async def upload_floorplan(
     project_id: str,
